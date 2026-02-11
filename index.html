@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>by.gamers | School Space</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;700&display=swap');
+
+        :root {
+            --ios-blue: #1c5ad9;
+            --ios-gray-bg: #c5cdd4;
+            --ios-navbar-bg: linear-gradient(to bottom, #b2bbca 0%, #6d84a2 50%, #597395 51%, #4c668a 100%);
+            --ios-button-bg: linear-gradient(to bottom, #7da1d1 0%, #4e7db1 50%, #3a6196 51%, #2d4d7a 100%);
+            --ios-button-active: linear-gradient(to bottom, #2d4d7a 0%, #3a6196 50%, #4e7db1 51%, #7da1d1 100%);
+            --ios-dark-btn: linear-gradient(to bottom, #4c4c4c 0%, #111111 100%);
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #dbdfe4;
+            background-image: url('https://www.transparenttextures.com/patterns/linen-canvas.png');
+            color: #333;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* iOS 6 Navigation Bar */
+        .navbar {
+            background: var(--ios-navbar-bg);
+            border-bottom: 1px solid #2d3e50;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-title {
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+            font-size: 20px;
+        }
+
+        /* iOS 6 Glossy Button */
+        .ios-button {
+            background: var(--ios-button-bg);
+            border: 1px solid #2a405e;
+            border-radius: 5px;
+            color: white;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: bold;
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+            box-shadow: 0 1px 0 rgba(255,255,255,0.3) inset;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .ios-button:active {
+            background: var(--ios-button-active);
+        }
+
+        .ios-button-dark {
+            background: var(--ios-dark-btn);
+            border: 1px solid #000;
+            border-radius: 5px;
+            color: white;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: bold;
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.8);
+            box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset;
+            text-decoration: none;
+        }
+
+        /* Content Card / Table View */
+        .ios-card {
+            background: white;
+            border: 1px solid #ababab;
+            border-radius: 10px;
+            margin: 20px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .ios-card-header {
+            background: linear-gradient(to bottom, #fcfcfc 0%, #e0e0e0 100%);
+            padding: 8px 15px;
+            border-bottom: 1px solid #ababab;
+            font-weight: bold;
+            color: #4c566c;
+            text-shadow: 0 1px 0 white;
+            font-size: 14px;
+        }
+
+        .ios-row {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            background: white;
+        }
+
+        .ios-row:last-child {
+            border-bottom: none;
+        }
+
+        /* App Icon Style */
+        .app-icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #333 0%, #000 100%);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            border: 0.5px solid rgba(255,255,255,0.1);
+        }
+
+        .app-icon::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.05));
+            border-radius: 12px 12px 50% 50% / 12px 12px 15% 15%;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #4c566c;
+            font-size: 12px;
+            text-shadow: 0 1px 0 white;
+        }
+
+        .badge {
+            background: #ff3b30;
+            color: white;
+            border-radius: 12px;
+            padding: 1px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+            border: 1.5px solid white;
+        }
+
+        .github-link {
+            color: #1c5ad9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 640px) {
+            .ios-card { margin: 15px 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="navbar-title">by.gamers</div>
+    </nav>
+
+    <div class="max-w-xl mx-auto">
+        
+        <!-- Header Section -->
+        <div class="text-center mt-10 mb-6 px-4">
+            <h1 class="text-3xl font-bold text-[#4c566c]" style="text-shadow: 0 1px 0 white;">Social Meets GitHub</h1>
+            <p class="text-[#667085] mt-2 font-medium">Там, де код стає спілкуванням</p>
+        </div>
+
+        <!-- Main Product Card -->
+        <div class="ios-card">
+            <div class="ios-card-header">ОСНОВНИЙ ПРОЕКТ</div>
+            <div class="ios-row">
+                <div class="app-icon">
+                    <svg viewBox="0 0 24 24" class="w-10 h-10 text-white fill-current">
+                        <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+                    </svg>
+                </div>
+                <div class="flex-1">
+                    <div class="text-lg font-bold">School Space</div>
+                    <div class="text-xs text-gray-500 uppercase tracking-wide">Web Social Network</div>
+                </div>
+                <div class="flex flex-col items-end gap-1">
+                    <span class="badge">LIVE</span>
+                </div>
+            </div>
+            <div class="p-4 text-sm leading-relaxed text-gray-700 bg-gray-50/50">
+                <b>School Space</b> — це не просто назва. Це простір для своїх. Соціальна мережа, яка живе на GitHub та створена ком'юніті для ком'юніті. Ніяких уроків — тільки спілкування.
+            </div>
+            <div class="ios-row justify-center bg-gray-100">
+                <a href="https://0leksiimarich.github.io/school-space/" target="_blank" class="ios-button w-full py-2">Увійти в мережу</a>
+            </div>
+        </div>
+
+        <!-- Technical Specs -->
+        <div class="ios-card">
+            <div class="ios-card-header">ТЕХНІЧНИЙ СТЕК</div>
+            <div class="ios-row justify-between">
+                <span class="text-gray-600">Хостинг</span>
+                <span class="font-bold">GitHub Pages</span>
+            </div>
+            <div class="ios-row justify-between">
+                <span class="text-gray-600">Доступ</span>
+                <span class="font-bold">Open Web</span>
+            </div>
+            <div class="ios-row justify-between">
+                <span class="text-gray-600">Тип</span>
+                <span class="font-bold text-blue-600 underline">Open Source</span>
+            </div>
+        </div>
+
+        <!-- About by.gamers -->
+        <div class="ios-card">
+            <div class="ios-card-header">ПРО КОМПАНІЮ BY.GAMERS</div>
+            <div class="p-4 text-sm text-gray-700">
+                <p>Ми створюємо сервіси, які базуються на принципах відкритості та свободи. <b>by.gamers</b> — це союз розробників, які перетворюють статичні сайти на живі платформи для взаємодії.</p>
+            </div>
+            <div class="ios-row">
+                <a href="https://github.com/0leksiimarich" target="_blank" class="github-link">Переглянути наші репозиторії ></a>
+            </div>
+        </div>
+
+        <!-- GitHub Style Feed -->
+        <div class="ios-card">
+            <div class="ios-card-header">ОСТАННІ ОНОВЛЕННЯ</div>
+            <div class="ios-row items-start gap-3">
+                <div class="w-2 h-2 mt-2 rounded-full bg-green-500 shadow-sm"></div>
+                <div>
+                    <div class="text-sm font-bold">Покращено UI профілів</div>
+                    <div class="text-xs text-gray-400">2 години тому</div>
+                </div>
+            </div>
+            <div class="ios-row items-start gap-3">
+                <div class="w-2 h-2 mt-2 rounded-full bg-blue-500 shadow-sm"></div>
+                <div>
+                    <div class="text-sm font-bold">Оптимізація GitHub Pages</div>
+                    <div class="text-xs text-gray-400">Вчора</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="mb-4">
+                <a href="https://github.com/0leksiimarich" target="_blank" class="ios-button-dark px-6 inline-block">Follow @by.gamers</a>
+            </div>
+            <p>© 2026 by.gamers. Побудовано на GitHub.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+
